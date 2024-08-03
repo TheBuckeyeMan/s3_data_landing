@@ -12,6 +12,7 @@ import org.springframework.web.client.RestTemplate;
 
 import ajmind.code.APIData.api.Todo;
 
+//additional java packages located here to WRITE the json response to a file
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -36,11 +37,13 @@ public class ApiDataApplication {
         return args -> {
             Todo todo = restTemplate.getForObject(
                     "https://jsonplaceholder.typicode.com/todos/1", Todo.class);
+			//Log the response we get
+			log.info(todo.toString());
 			//Add in desktop save location
             saveToFile(todo, "/Users/adammaas/desktop/todo.json");
         };
     }
-//add in addditional code to save to desktop
+//add in addditional code to write the response provided in todo and then save to desktop
     private void saveToFile(Todo todo, String filePath) {
         try (FileWriter fileWriter = new FileWriter(new File(filePath))) {
             fileWriter.write(todo.toString());
