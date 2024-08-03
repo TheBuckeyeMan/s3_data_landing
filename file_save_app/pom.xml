@@ -65,6 +65,12 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!--Adding in dependency so we are able to save our file to the s3 bucket located in aws-->
+		<dependency>
+    		<groupId>software.amazon.awssdk</groupId>
+			<artifactId>s3</artifactId>
+			<version>2.20.18</version> <!-- Check for the latest version -->
+		</dependency>
 	</dependencies>
 
 	<build>

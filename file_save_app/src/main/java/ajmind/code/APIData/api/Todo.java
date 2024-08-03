@@ -3,6 +3,8 @@
 package ajmind.code.APIData.api;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+//Added packageds so we can convert the jason response to string using jackson
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
