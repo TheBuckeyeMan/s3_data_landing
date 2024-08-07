@@ -9,6 +9,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
+//If we consume a different api, we will need to modify the fields here
 public record Todo(Long id, String title) {
 
     @Override
