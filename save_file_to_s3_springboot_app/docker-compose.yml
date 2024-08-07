@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  apiapp:
+    image: thebuckeyeman20/springbootimages:apiapp
+    container_name: apiapp
+    ports:
+      - 8081:8081
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+  
+  #Add in a second image to run as part of docker-compoase.yml
+  exampleapp:
+    image: thebuckeyeman20/springbootimages:example
+    container_name: exampleapp
+    ports:
+      - 8082:8082
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+#Add in a third image we wnat to run locally 
+  newimage:
+    image: thebuckeyeman20/springbootimages:newimage
+    container_name: newimage
+    ports:
+      - 8083:8083
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+      
+  
